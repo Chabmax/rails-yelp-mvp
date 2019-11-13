@@ -1,0 +1,18 @@
+
+<div class="container col-6" align="center">
+  <div class="row">
+    <div class="col-sm-8">
+     <h1>Discover all our restaurants</h1>
+     <% @restaurants.each do |restaurant| %>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Restaurant: <%= restaurant.name %></h5>
+          <p class="card-text">Food category: <%= restaurant.category %></p>
+          <button class="btn btn-primary"><%= link_to 'See more', restaurant_path(restaurant['id']) %>
+        </div>
+    </div>
+    <% end %>
+    <br/>
+    <button class="btn btn-primary"><%= link_to 'Add restaurant', new_restaurant_path %>
+  </div>
+</div>
